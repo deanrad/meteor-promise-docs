@@ -18,6 +18,7 @@ Meteor.methods({
 AwesomeAdd = async function (a, b) {
   var result = await Meteor.call("add", a, b);
   console.log("Awesome result", result);
+  return result;
 }
 
 // 2. invoke this in the browser console
@@ -44,7 +45,7 @@ Be careful though, they don't yet compose well :(
 Awesome result 5
 Awesome result [object Object]1  // <----- Wha?
 
-// maybe this would work, but...
+//but...
 ComposedAdd = async function(a, b, c) {
   var result1 = await AwesomeAdd(a, b)
   var result2 = await AwesomeAdd(result1, c)
@@ -54,7 +55,8 @@ ComposedAdd = async function(a, b, c) {
 ComposedAdd(1,2,3)
 ⋖ Promise {[[PromiseStatus]]: "pending", [[PromiseValue]]: undefined}
 Awesome result 3
-Awesome result 3   // Still not composing well...
+Awesome result 6 /// yeah
+
 
 ```
 
