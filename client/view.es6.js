@@ -1,4 +1,4 @@
 Template.view.helpers({
-  wordHelper() { return "foo" },
+  wordHelper() { return ["foo", "bar", "baz"]; },
   promiseHelper: fnw
 })
