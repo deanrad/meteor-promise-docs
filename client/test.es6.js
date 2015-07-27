@@ -3,6 +3,7 @@
 AwesomeAdd = async function (a, b) {
   var result = await Meteor.call("add", a, b);
   console.log("Awesome result", result);
+  return result;
 }
 
 ComposedAdd = async function(a, b, c) {
