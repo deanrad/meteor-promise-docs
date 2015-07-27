@@ -34,18 +34,17 @@ Cool! So what happened ?
   2. The promise resolved, printing the console.log statement with the result
   3. FTW!
 
-
-Be careful though, they don't yet compose well :(
-
-
 ```js
 
 > AwesomeAdd(AwesomeAdd(2,3), 1)
 ⋖ Promise {[[PromiseStatus]]: "pending", [[PromiseValue]]: undefined}
 Awesome result 5
-Awesome result [object Object]1  // <----- Wha?
+Awesome result [object Object]1  
 
-//but...
+// You can't simply compose without 'awaiting', we're seeing the result
+// of a promise.toString() added to "1"
+
+//but, in a true 'async' fn
 ComposedAdd = async function(a, b, c) {
   var result1 = await AwesomeAdd(a, b)
   var result2 = await AwesomeAdd(result1, c)
@@ -55,7 +54,7 @@ ComposedAdd = async function(a, b, c) {
 ComposedAdd(1,2,3)
 ⋖ Promise {[[PromiseStatus]]: "pending", [[PromiseValue]]: undefined}
 Awesome result 3
-Awesome result 6 /// yeah
+Awesome result 6 /// yeah!
 
 
 ```
