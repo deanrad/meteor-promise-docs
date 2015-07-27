@@ -4,6 +4,7 @@
 # but you can also edit it by hand.
 
 meteor-platform
+coffeescript
 
 grigio:babel
 deanius:promise
