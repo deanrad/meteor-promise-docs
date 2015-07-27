@@ -68,4 +68,3 @@ So, there are still some challenges with combining/composing promises, but I'm e
 # Open Questions
 
   1. Will this work in reactive data context, i.e. helpers??
-  2. What is the reason they don't compose, and is there a solution?
