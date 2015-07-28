@@ -5,6 +5,7 @@
 
 meteor-platform
 coffeescript
+reactive-var
 
 grigio:babel
 deanius:promise
