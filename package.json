@@ -1,0 +1,10 @@
+{
+  "name": "meteor-async-call-example",
+  "version": "0.1.0",
+  "description": "Async experiment",
+  "scripts": {
+    "start": "meteor --port 3120"
+  },
+  "author": "Dean Radcliffe",
+  "license": "MIT"
+}
