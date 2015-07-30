@@ -1,3 +1,6 @@
 Meteor.methods({
-  add(x, y){ return x+y }
+  add(x, y){
+    Meteor.sleep(750);
+    return `${x} + ${y}`
+  }
 })
