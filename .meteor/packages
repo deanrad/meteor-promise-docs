@@ -5,6 +5,7 @@
 
 meteor-platform
 coffeescript
+simple:markdown-templating
 reactive-var
 
 grigio:babel
@@ -13,3 +14,4 @@ froatsnook:sleep
 
 # almost ready MDG package - provides an alternate polyfill to deanius:promise
 # promise
+simple:reactive-method

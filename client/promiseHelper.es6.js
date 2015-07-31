@@ -44,6 +44,8 @@ PromiseHelper = (fn) => {
         helperComputation.invalidate();
         return v;
       });
+      //optional: suppress display of [object Promise] message
+      returnValues[argHash] = "waiting..."
     }
     return returnValues[argHash];
   };
