@@ -13,20 +13,20 @@ Template.explanation.events({
 });
 
 Template.explanation.helpers({
-  concatenatedArgs: PromiseHelper(function (field1, field2) {
+  concatenatedArgs: ReactivePromise(function (field1, field2) {
     var template = Template.instance();
-    var promise = Meteor.call("addSleep", template[field1].get(), template[field2].get());
+    var promise = Meteor.promise("addSleep", template[field1].get(), template[field2].get());
     return promise;
-  }),
-  concatenatedArgsPost: PromiseHelper(function (field1, field2) {
+  }, "loading..."),
+  concatenatedArgsPost: ReactivePromise(function (field1, field2) {
     var template = Template.instance();
-    var promise = Meteor.call("add", template[field1].get(), template[field2].get());
+    var promise = Meteor.promise("add", template[field1].get(), template[field2].get());
     return promise.then(function(result){
       return "Server says: " + result;
     }).then(function(result){
       return result + " :)"
     })
-  })
+  }, "loading...")
 
 });
 
@@ -45,10 +45,10 @@ Template.explanation.events({
   }
 })
 Template.explanation.helpers({
-  userFavoriteNumber: PromiseHelper(function(){
+  userFavoriteNumber: ReactivePromise(function(){
     var promise = Template.instance().userFavoriteNumber;
     return promise
-      .then(function (val){ return Meteor.call("add", val, " :)")})
+      .then(function (val){ return Meteor.promise("add", val, " :)")})
       .then(function (val){
         // a promise is a one-time, so disable after resolved
         $("#favoriteNumber").first().prop('disabled', true).css('background-color', '#ddd');

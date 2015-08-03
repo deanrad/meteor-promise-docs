@@ -6,7 +6,9 @@
 meteor-platform
 coffeescript
 simple:markdown-templating
+simple:highlight.js
 reactive-var
+promise
 
 grigio:babel
 deanius:promise

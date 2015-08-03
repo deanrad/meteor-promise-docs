@@ -64,7 +64,7 @@ as this, and our field will keep up to date with the server's response!
 
 ```js
 Template.ui.helpers({
-  "concatenatedArgs": PromiseHelper(function () {
+  "concatenatedArgs": ReactivePromise(function () {
     var template = Template.instance();
     var promise =  Meteor.call("add", template.arg1.get(), template.arg2.get());
     return promise;
@@ -99,7 +99,7 @@ A full explanation of Promises is out of scope here, but since they are
 part of the new ES6 JavaScript standard, it would be great if you learn
 how to use them.
 
-Now, the secret sauce. By wrapping our helper function in `PromiseHelper`, it allows us to return a Promise. When that Promise is *resolved*-in other words, when its result has come in- the helper will update.
+Now, the secret sauce. By wrapping our helper function in `ReactivePromise`, it allows us to return a Promise. When that Promise is *resolved*-in other words, when its result has come in- the helper will update.
 
 *And that's all there is to it!*
 
@@ -115,7 +115,7 @@ Promise, a new Promise is created for the combined result of all previous
 promises, much like chaining with JQuery. So we can do this:
 
 ```js
-concatenatedArgs: PromiseHelper(function () {
+concatenatedArgs: ReactivePromise(function () {
   var template = Template.instance();
   var promise = Meteor.call("add", template.arg1.get(), template.arg2.get());
   return promise.then(function(result){
@@ -127,7 +127,7 @@ concatenatedArgs: PromiseHelper(function () {
 ```
 
 # A New Hope ?
-This PromiseHelper function is completely safe to wrap regular (non-promise
+This ReactivePromise function is completely safe to wrap regular (non-promise
 returning) helpers with. So if every method passed to `Template.name.helpers` were automatically wrapped in it, you'd
 find that you could return Promises at will from a function. This would raise the level of abstraction to say that helpers can be sync, or async - either type of code would work.
 

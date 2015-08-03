@@ -68,15 +68,15 @@ Template.ui.events({
 
 ```js
 Template.ui.helpers({
-  "concatenatedArgs": PromiseHelper(function () {
+  "concatenatedArgs": ReactivePromise(function () {
     var template = Template.instance();
-    var promise =  Meteor.call("add", template.arg1.get(), template.arg2.get());
+    var promise =  Meteor.promise("add", template.arg1.get(), template.arg2.get());
     return promise;
-  })
+  }, "loading...")
 });
 ```
 
-# How In The???
+# Now, How Does It Work ?
 So let me explain some of the *magic* going on here.
 
 First, the version of `Meteor.call` being used is an enhanced one provided by `deanius:promise`. It allows you to omit the final callback parameter, and instead provides a Promise for the result. Promises are effectively the same as callbacks, but instead of handling the response in one method like this:
@@ -97,7 +97,7 @@ promise
 
 Promises are better than callbacks for many reasons, not the least of which is that you can separate error-handling code from happy-path code. A full explanation of Promises is out of scope here, but since they are part of the new ES6 JavaScript standard, it would be great if you learn how to use them.
 
-Now, the secret sauce. By wrapping our helper function in `PromiseHelper`, it allows us to return a Promise. When that Promise is *resolved*-in other words, when its result has come in- the helper will update.
+Now, the secret sauce. By wrapping our helper function in `ReactivePromise`, it allows us to return a Promise. When that Promise is *resolved*-in other words, when its result has come in- the helper will update.
 
 *And that's all there is to it!*
 
@@ -109,9 +109,9 @@ In order for you to see that there is some delay between creating the Promise, a
 Promises are chainable, so if we need to do some post-processing on the server result, no problem! Each time we tack a `then` onto an existing Promise, a new Promise is created for the combined result of all previous promises, much like chaining with JQuery. So we can do this:
 
 ```js
-concatenatedArgs: PromiseHelper(function () {
+concatenatedArgs: ReactivePromise(function () {
   var template = Template.instance();
-  var promise = Meteor.call("add", template.arg1.get(), template.arg2.get());
+  var promise = Meteor.promise("add", template.arg1.get(), template.arg2.get());
   return promise.then(function(result){
     return "Server says: " + result;
   }).then(function(result){
@@ -131,7 +131,7 @@ Server-provided result:
 ## User interaction
 A promise can represent *any* eventual value. Here, for the sake of demonstration, we create a promise for "the eventual value of the `favoriteNumber` field, once the user has clicked submit."
 
-Normally, reactivity can take care of this, but in this case, we've used a Promise to show how `PromiseHelper` is not limited to `Meteor.call` promises. We've also used the ability to chain promises to specify that once the promise resolves, we want to process the value server-side, then gray out the field.
+Normally, reactivity can take care of this, but in this case, we've used a Promise to show how `ReactivePromise` is not limited to `Meteor.call` promises. We've also used the ability to chain promises to specify that once the promise resolves, we want to process the value server-side, then gray out the field.
 
 ## Demo 3
 What's your favorite number?
@@ -155,10 +155,10 @@ Template.explanation.events({
   }
 })
 Template.explanation.helpers({
-  userFavoriteNumber: PromiseHelper(function(){
+  userFavoriteNumber: ReactivePromise(function(){
     var promise = Template.instance().userFavoriteNumber;
     return promise
-      .then(function (val){ return Meteor.call("add", val, " :)")})
+      .then(function (val){ return Meteor.promise("add", val, " :)")})
       .then(function(val){
         // a promise is a one-time, so disable after resolved
         $("#favoriteNumber").first().prop('disabled', true).css('background-color', '#ddd');
@@ -169,7 +169,7 @@ Template.explanation.helpers({
 ```
 
 # A New Hope ?
-This PromiseHelper function is completely safe to wrap regular (non-promise returning) helpers with. So if every method passed to `Template.name.helpers` were automatically wrapped in it, you'd find that you could return Promises at will from a function. This would raise the level of abstraction to say that helpers can be sync, or async - either type of code would work.
+This ReactivePromise function is completely safe to wrap regular (non-promise returning) helpers with. So if every method passed to `Template.name.helpers` were automatically wrapped in it, you'd find that you could return Promises at will from a function. This would raise the level of abstraction to say that helpers can be sync, or async - either type of code would work.
 
 Promises can be used anywhere callback-accepting code is, so `HTTP.call` and friends could all be modified to return a Promise if the final callback parameter is omitted. This would increase the ease with which we could combine Reactive funtionality across different types of use cases.
 
