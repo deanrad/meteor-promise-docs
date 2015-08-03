@@ -11,7 +11,3 @@ reactive-var
 grigio:babel
 deanius:promise
 froatsnook:sleep
-
-# almost ready MDG package - provides an alternate polyfill to deanius:promise
-# promise
-simple:reactive-method

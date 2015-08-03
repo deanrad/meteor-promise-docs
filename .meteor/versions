@@ -8,7 +8,7 @@ callback-hook@1.0.3
 check@1.0.5
 coffeescript@1.0.6
 ddp@1.1.0
-deanius:promise@2.2.0
+deanius:promise@2.2.1
 deps@1.0.7
 ejson@1.0.6
 fastclick@1.0.3
@@ -42,7 +42,6 @@ routepolicy@1.0.5
 session@1.1.0
 simple:highlight.js@1.0.9
 simple:markdown-templating@1.2.7
-simple:reactive-method@1.0.2
 spacebars@1.0.6
 spacebars-compiler@1.0.6
 templating@1.1.1

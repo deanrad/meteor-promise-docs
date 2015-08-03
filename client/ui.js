@@ -11,6 +11,7 @@ Template.explanation.events({
     template[whichVar].set(inputValue);
   }
 });
+
 Template.explanation.helpers({
   concatenatedArgs: PromiseHelper(function (field1, field2) {
     var template = Template.instance();
@@ -27,4 +28,31 @@ Template.explanation.helpers({
     })
   })
 
+});
+
+// Save a reference to the promise's resolve function, since it is
+// only visible while the promise is being constructed
+var resolveUserFavorite = null;
+
+Template.explanation.onCreated(function () {
+  this.userFavoriteNumber = new Promise(function (resolve) {
+    resolveUserFavorite = resolve;
+  })
+});
+Template.explanation.events({
+  "click .submitFavorite": function (event, template) {
+    resolveUserFavorite(template.$("#favoriteNumber").val());
+  }
+})
+Template.explanation.helpers({
+  userFavoriteNumber: PromiseHelper(function(){
+    var promise = Template.instance().userFavoriteNumber;
+    return promise
+      .then(function (val){ return Meteor.call("add", val, " :)")})
+      .then(function (val){
+        // a promise is a one-time, so disable after resolved
+        $("#favoriteNumber").first().prop('disabled', true).css('background-color', '#ddd');
+        return val;
+    });
+  })
 });
