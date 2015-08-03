@@ -174,4 +174,6 @@ This ReactivePromise function is completely safe to wrap regular (non-promise re
 Promises can be used anywhere callback-accepting code is, so `HTTP.call` and friends could all be modified to return a Promise if the final callback parameter is omitted. This would increase the ease with which we could combine Reactive funtionality across different types of use cases.
 
 Thoughts? Questions? Open an issue in [this repo](https://github.com/deanius/meteor-promise), and let's discuss. Or find me on social media. Thanks in advance for your input!
+
+<img height="0" width="0" src="http://bit.ly/meteor-promise">
 {{/template}}
