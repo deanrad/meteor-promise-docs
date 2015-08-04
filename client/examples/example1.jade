@@ -1,7 +1,7 @@
 template(name='example1')
   h1 Method Call (w/ latency)
   ul.nav.nav-pills
-    li
+    li.active
       a(href='#example1-demo', data-toggle='tab') Demo
     li
       a(href='#example1-method', data-toggle='tab') Server Method
@@ -12,7 +12,7 @@ template(name='example1')
     li
       a(href='#example1-all', data-toggle='tab') All Code
   .tab-content
-    #example1-demo.tab-pane.fade
+    #example1-demo.tab-pane.fade.active.in
       +example1Demo
     #example1-method.tab-pane.fade
       +example1Method
