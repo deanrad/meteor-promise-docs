@@ -1,0 +1,21 @@
+<template name="example2Demo">
+{{#markdown}}
+Since promises are composable/chainable, we can combine any number of promises
+using `then`. Here, we feed the result back through the server again, and
+again through a client-side concatenation, showing that a Promise can be for
+any combination of synchronous and asynchronous actions.
+{{/markdown}}
+  <div>
+    Change values here:
+    <fieldset>
+      <input id="arg1" class="dynamic" value="fizz"/>
+      <input id="arg2" class="dynamic" value="buzz"/>
+    </fieldset>
+  </div>
+  <div>
+    See the result of a chained server-side add here:
+  </div>
+  <div>
+    <textarea>{{chainedServerCall "arg1" "arg2"}}</textarea>
+  </div>
+</template>

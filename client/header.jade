@@ -6,8 +6,10 @@ template(name='header')
         ul.nav(role='navigation')
           li.dropdown
             a#drop1.dropdown-toggle(href='#', role='button', data-toggle='dropdown')
-              | Examples
+              | Package Examples
               b.caret
             ul.dropdown-menu(role='menu')
               li(role='presentation')
-                a(role='menuitem', tabindex='-1', href='#example-one') Method call (w/ latency)
+                a(role='menuitem', tabindex='-1', href='#example-one') Meteor.promise - Method call (w/ latency)
+              li(role='presentation')
+                a(role='menuitem', tabindex='-1', href='#example-two') Meteor.promise - Chained Method Calls

@@ -12,6 +12,7 @@ mquandalle:jade
 simple:markdown-templating
 simple:highlight.js
 bootstrap
+markdown
 stylus
 
 grigio:babel
