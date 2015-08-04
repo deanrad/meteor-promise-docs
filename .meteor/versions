@@ -9,7 +9,6 @@ callback-hook@1.0.3
 check@1.0.5
 ddp@1.1.0
 deanius:debug-ddp@1.0.5
-deanius:promise@2.3.0
 deps@1.0.7
 ejson@1.0.6
 fastclick@1.0.3
@@ -35,6 +34,7 @@ mongo@1.1.0
 mquandalle:jade@0.4.3
 mquandalle:jade-compiler@0.4.3
 observe-sequence@1.0.6
+okgrow:promise@0.9.0
 ordered-dict@1.0.3
 promise@0.4.1
 random@1.0.3
