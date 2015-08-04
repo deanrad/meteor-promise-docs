@@ -8,6 +8,7 @@ bootstrap@1.0.1
 callback-hook@1.0.3
 check@1.0.5
 ddp@1.1.0
+deanius:debug-ddp@1.0.5
 deanius:promise@2.3.0
 deps@1.0.7
 ejson@1.0.6
