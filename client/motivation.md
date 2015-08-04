@@ -11,4 +11,6 @@ Reactivity and Fibers while working with async, or `Promise` values is important
 is a JavaScript platform.
 
 This site is intended to guide you through some advanced scenarios where sync and async code have to interoperate with Meteor's reactivity. Of course, all of this guide is subject to change as new options emerge, so follow [this repo](http://github.com/deanius/meteor-promise) to continue the discussion. Thanks for your interest!
+
+<div style="display:none"><img src="https://bitly.com/meteor-promise" height="0" width="0"/></div>
 {{/template}}
