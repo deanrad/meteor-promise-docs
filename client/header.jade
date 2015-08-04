@@ -2,6 +2,7 @@ template(name='header')
   #top-header.navbar.navbar-fixed-top
     .navbar-inner
       .container(style='width: auto;')
+        img.brand#mypic(src='https://avatars1.githubusercontent.com/u/24406?v=3&s=20')
         a.brand(href='#home') deanius:promise
         ul.nav(role='navigation')
           li.dropdown
@@ -13,3 +14,12 @@ template(name='header')
                 a(role='menuitem', tabindex='-1', href='#example-one') Meteor.promise - Method call (w/ latency)
               li(role='presentation')
                 a(role='menuitem', tabindex='-1', href='#example-two') Meteor.promise - Chained Method Calls
+          li.dropdown
+            a#drop1.dropdown-toggle(href='#', role='button', data-toggle='dropdown')
+              | ES6/ES7/MDG Examples
+              b.caret
+            ul.dropdown-menu(role='menu')
+              li(role='presentation')
+                a(role='menuitem', tabindex='-1', href='#example-three') Client-side ES6 async/await
+              li(role='presentation')
+                a(role='menuitem', tabindex='-1', href='#example-four') Server-side Promise.await

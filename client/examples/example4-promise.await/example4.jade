@@ -1,0 +1,26 @@
+template(name='example4')
+  h1#example-three Server-side Promise.await
+  ul.nav.nav-pills
+    li.active
+      a(href='#example4-demo', data-toggle='tab') Demo
+    li
+      a(href='#example4-method', data-toggle='tab') Server Method
+    li
+      a(href='#example4-template', data-toggle='tab') Client Template
+    li
+      a(href='#example4-template-code', data-toggle='tab') Template Code
+    li
+      a(href='#example4-all', data-toggle='tab') All Code
+  .tab-content
+    #example4-demo.tab-pane.fade.active.in
+      +example4Demo
+    #example4-method.tab-pane.fade
+      +example4Method
+    #example4-template.tab-pane.fade
+      +example4Template
+    #example4-template-code.tab-pane.fade
+      +example4TemplateCode
+    #example4-all.tab-pane.fade
+      +example4Method
+      +example4Template
+      +example4TemplateCode

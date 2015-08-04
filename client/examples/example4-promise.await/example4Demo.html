@@ -1,0 +1,21 @@
+<template name="example4Demo">
+{{#markdown}}
+  We've dealt with Promises as a client-side construct so far, but many npm libraries
+  choose to return Promises instead of -or in addition to- accepting callbacks.
+
+  If the library calls accept callbacks - you can use `Meteor.wrapAsync` to get a
+  version that will appear to "await" the callback, and you're done. But until
+  recently, if they returned a Promise, you were out of luck.
+
+  However, with the new [`promise`](https://atmospherejs.com/meteor/promise) package
+  by MDG, `Promise.await` becomes the equivalent of `Meteor.wrapAsync`, but for
+  functions returning promises. Nice :)
+{{/markdown}}
+  <div>
+    Let's call a method that will take some time on the server (2500 ms) to return:
+  </div>
+  <div>
+    <button id="triggerPromise">Put the result of a server method awaiting a promise here-&gt;</button>
+    <span id="promiseOutput">{{promiseVal}}</span>
+  </div>
+</template>
