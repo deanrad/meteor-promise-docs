@@ -4,12 +4,18 @@
 # but you can also edit it by hand.
 
 meteor-platform
-coffeescript
-simple:markdown-templating
-simple:highlight.js
 reactive-var
 promise
+spiderable
+
+mquandalle:jade
+simple:markdown-templating
+simple:highlight.js
+bootstrap
+stylus
 
 grigio:babel
-deanius:promise
+
 froatsnook:sleep
+
+deanius:promise

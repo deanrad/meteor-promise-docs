@@ -1,0 +1,15 @@
+<template name="example1Demo">
+  <div>
+    Enter values here:
+    <fieldset>
+      <input id="arg1" class="dynamic" value="foo"/>
+      <input id="arg2" class="dynamic" value="foo"/>
+    </fieldset>
+  </div>
+  <div>
+    See the result of a server-side add here:
+  </div>
+  <div>
+    <textarea>{{serverCallWithLatency "arg1" "arg2"}}</textarea>
+  </div>
+</template>
