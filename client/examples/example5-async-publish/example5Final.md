@@ -12,7 +12,7 @@ Template.example5Demo.viewmodel('example5Demo', {
   postText: `
 # My Awesome Post
 
-View online at: {{shortUrl}}
+View online at: {{|shortUrl}}
 
 TODO: write
 `
