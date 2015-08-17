@@ -1,9 +1,6 @@
 {{#template name="example5Final"}}
 ```js
-
-
-// Each property of the viewmodel is a reactive var, but its property is
-// automatically updated by DOM events on the element it is bound to.
+// Each property of the viewmodel is like a ReactiveVar, bound to a DOM element
 Template.example5Demo.viewmodel('example5Demo', {
   publishedUrl: "",
   publishedRev: "",
@@ -33,10 +30,10 @@ function publish () {
       //returning that value here will feed the next promise
       return viewmodel.publishedUrl(publishedUrl)
     })
-    .then(upsertShortUrl)
+    .then(getShortUrl)
     .then(shortUrl => {
       viewmodel.shortUrl(shortUrl)
-      return viewmodel.postText(viewmodel.postText().replace('{{shortUrl}}', shortUrl))
+      return viewmodel.postText(viewmodel.postText().replace('{{|shortUrl}}', shortUrl))
     })
     .then((postText) => {
       //updatePost returns a Promise, which when returned from a Promise step,
@@ -88,7 +85,7 @@ function upsertPost (postText, publishedUrl) {
   }
 }
 
-function upsertShortUrl (publishedUrl) {
+function getShortUrl (publishedUrl) {
   if (viewmodel.shortUrl() == '') {
     return makeShortUrl(publishedUrl)
   }
@@ -96,8 +93,6 @@ function upsertShortUrl (publishedUrl) {
     return Promise.resolve(viewmodel.shortUrl())
   }
 }
-
-
 
 ```
 {{/template}}

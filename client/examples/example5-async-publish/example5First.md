@@ -14,7 +14,7 @@ function publish () {
     .then(makeShortUrl)
     .then(shortUrl => {
       viewmodel.shortUrl(shortUrl)
-      return viewmodel.postText(viewmodel.postText().replace('{{shortUrl}}', shortUrl))
+      return viewmodel.postText(viewmodel.postText().replace('{{|shortUrl}}', shortUrl))
     })
     .then((postText) => {
       //updatePost returns a Promise, which when returned from a Promise step,

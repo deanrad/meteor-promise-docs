@@ -9,10 +9,10 @@ publish = function publish () {
       viewmodel.publishedRev(publishedRev)
       return viewmodel.publishedUrl(publishedUrl)
     })
-    .then(upsertShortUrl)  // <<<<<<<<----------- upsert, not make
+    .then(getShortUrl)  // <<<<<<<<----------- get, not make
     .then(shortUrl => {
       viewmodel.shortUrl(shortUrl)
-      return viewmodel.postText(viewmodel.postText().replace('{{shortUrl}}', shortUrl))
+      return viewmodel.postText(viewmodel.postText().replace('{{|shortUrl}}', shortUrl))
     })
     .then((postText) => {
       return updatePost(postText, viewmodel.publishedUrl())
@@ -37,7 +37,7 @@ function upsertPost (postText, publishedUrl) {
   }
 }
 
-function upsertShortUrl (publishedUrl) {
+function getShortUrl (publishedUrl) {
   if (viewmodel.shortUrl() == '') {
     return makeShortUrl(publishedUrl)
   }
