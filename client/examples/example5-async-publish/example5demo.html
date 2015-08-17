@@ -1,0 +1,20 @@
+<template name="example5Demo">
+{{#markdown}}
+We're going to simulate a blog publishing application, publishing a user's text  to the web via an async publish.
+
+Once published, the blog article will have a bit.ly `shortUrl` created for it, which we will embed in the document and republish. The `publishedUrl` and `shortUrl` will stay the same for all successive versions, but the `publishedRev` will be different.
+
+We will simulate the actual publishing with methods that return promises, which resolve after a delay.
+{{/markdown}}
+  <div>
+    <textarea name="postText" rows="5" cols="60" data-bind="text: postText"></textarea>
+    <br>
+    published Url: <span data-bind="text: publishedUrl"></span><br>
+    published Rev: <span data-bind="text: publishedRev"></span><br>
+    bitly Url: <span data-bind="text: shortUrl"></span><br>
+  </div>
+  <div>
+    <button id="publishPost" data-bind="enabled: !publishInProgress">Publish Post</button>
+    <button id="reset">Reset</button>
+  </div>
+</template>

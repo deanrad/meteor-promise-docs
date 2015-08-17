@@ -1,0 +1,28 @@
+template(name='example5')
+  h1#example-three Async Publishing example
+  ul.nav.nav-pills
+    li.active
+      a(href='#example5-demo', data-toggle='tab') Demo
+    li
+      a(href='#example5-sync', data-toggle='tab') Synchronous Pseudo-code
+    li
+      a(href='#example5-first', data-toggle='tab') First Publish
+    li
+      a(href='#example5-any', data-toggle='tab') Any Publish
+    li
+      a(href='#example5-template', data-toggle='tab') Template
+    li
+      a(href='#example5-final', data-toggle='tab') Final Code
+  .tab-content
+    #example5-demo.tab-pane.fade.active.in
+      +example5Demo
+    #example5-sync.tab-pane.fade
+      +example5Sync
+    #example5-first.tab-pane.fade
+      +example5First
+    #example5-any.tab-pane.fade
+      +example5Any
+    #example5-template.tab-pane.fade
+      +example5Template
+    #example5-final.tab-pane.fade
+      +example5Final

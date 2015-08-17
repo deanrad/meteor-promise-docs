@@ -1,9 +1,10 @@
 {
-  "name": "meteor-async-call-example",
+  "name": "meteor-promise-docs",
   "version": "0.1.0",
-  "description": "Async experiment",
+  "description": "Demos the okgrow:promise package and ReactivePromise",
   "scripts": {
-    "start": "meteor --port 3120"
+    "start": "meteor --port 4160",
+    "deploy": "meteor deploy okgrow-promise.meteor.com"
   },
   "author": "Dean Radcliffe",
   "license": "MIT"
