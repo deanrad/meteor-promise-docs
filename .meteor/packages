@@ -6,6 +6,7 @@
 meteor-platform
 reactive-var
 promise
+http
 spiderable
 
 mquandalle:jade
