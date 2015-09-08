@@ -19,6 +19,7 @@ spacebars
 check
 ecmascript
 
+grigio:babel
 reactive-var
 promise
 http
