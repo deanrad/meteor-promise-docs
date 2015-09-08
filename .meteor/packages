@@ -3,26 +3,6 @@
 # 'meteor add' and 'meteor remove' will edit this file for you,
 # but you can also edit it by hand.
 
-reactive-var
-promise
-http
-spiderable
-
-mquandalle:jade
-simple:markdown-templating
-simple:highlight.js
-bootstrap
-markdown
-stylus
-
-grigio:babel
-
-froatsnook:sleep
-
-okgrow:promise
-manuel:viewmodel
-
-# deanius:debug-ddp
 standard-minifiers
 meteor-base
 mobile-experience
@@ -37,3 +17,23 @@ random
 ejson
 spacebars
 check
+ecmascript
+
+reactive-var
+promise
+http
+spiderable
+
+mquandalle:jade
+simple:markdown-templating
+simple:highlight.js
+bootstrap
+markdown
+stylus
+
+froatsnook:sleep
+
+okgrow:promise
+manuel:viewmodel
+
+# deanius:debug-ddp
