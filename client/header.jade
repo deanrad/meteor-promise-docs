@@ -23,6 +23,15 @@ template(name='header')
                 a(role='menuitem', tabindex='-1', href='#example-one') Meteor.promise - Method call (w/ latency)
               li(role='presentation')
                 a(role='menuitem', tabindex='-1', href='#example-two') Meteor.promise - Chained Method Calls
+              li(role='presentation')
+                a(role='menuitem', tabindex='-1', href='#example-six') HTTP Promise-style
+          li.dropdown
+            a#drop1.dropdown-toggle(href='#', role='button', data-toggle='dropdown')
+              | Real-World Examples
+              b.caret
+            ul.dropdown-menu(role='menu')
+              li(role='presentation')
+                a(role='menuitem', tabindex='-1', href='#example-five') Async Publishing Example
           li.dropdown
             a#drop1.dropdown-toggle(href='#', role='button', data-toggle='dropdown')
               | ES6/ES7/MDG Examples
@@ -32,10 +41,3 @@ template(name='header')
                 a(role='menuitem', tabindex='-1', href='#example-three') Client-side ES6 async/await
               li(role='presentation')
                 a(role='menuitem', tabindex='-1', href='#example-four') Server-side Promise.await
-          li.dropdown
-            a#drop1.dropdown-toggle(href='#', role='button', data-toggle='dropdown')
-              | Real-World Examples
-              b.caret
-            ul.dropdown-menu(role='menu')
-              li(role='presentation')
-                a(role='menuitem', tabindex='-1', href='#example-five') A Blogging App

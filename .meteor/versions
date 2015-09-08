@@ -51,7 +51,7 @@ mquandalle:jade@0.4.3
 mquandalle:jade-compiler@0.4.3
 npm-mongo@1.4.39-rc.0_1
 observe-sequence@1.0.7-rc.0
-okgrow:promise@0.9.3
+okgrow:promise@0.9.5
 ordered-dict@1.0.4-rc.0
 promise@0.4.8-rc.0
 random@1.0.4-rc.0
