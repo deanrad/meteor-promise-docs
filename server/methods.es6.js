@@ -19,5 +19,17 @@ Meteor.methods({
         console.log("done running")
         resolve("I'm baaaack....")}, 2500))
     return Promise.await(promise);
+  },
+  futureTime() {
+    let actions = new Promise((resolve) =>
+        setTimeout(()=> resolve(new Date), 5000))
+      .then(logAndReturn)
+      .catch(logAndReturn);
+    return Promise.await(actions);
   }
 })
+
+var logAndReturn = (value) => {
+  console.log("The value returned is:", value);
+  return value;
+}
