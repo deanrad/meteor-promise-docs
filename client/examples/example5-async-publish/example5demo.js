@@ -8,7 +8,7 @@ Template.example5Demo.viewmodel('example5Demo', {
 
 View online at: {{shortUrl}}
 
-TODO: write
+TODOx: write
 `
 })
 

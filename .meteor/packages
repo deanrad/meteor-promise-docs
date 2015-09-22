@@ -3,7 +3,23 @@
 # 'meteor add' and 'meteor remove' will edit this file for you,
 # but you can also edit it by hand.
 
-meteor-platform
+standard-minifiers
+meteor-base
+mobile-experience
+mongo
+blaze-html-templates
+session
+jquery
+tracker
+logging
+reload
+random
+ejson
+spacebars
+check
+ecmascript
+
+grigio:babel
 reactive-var
 promise
 http
@@ -15,8 +31,6 @@ simple:highlight.js
 bootstrap
 markdown
 stylus
-
-grigio:babel
 
 froatsnook:sleep
 

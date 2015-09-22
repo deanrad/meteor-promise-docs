@@ -1,0 +1,13 @@
+<template name="example6Demo">
+{{#markdown}}
+We can use the Promise returning variants of `HTTP.get` to simplify our coding,
+and to better handle errors.
+{{/markdown}}
+  <div>
+    <button id="triggerOkHTTP">HTTP.get Promise-style without error</button>
+    <button id="triggerErrHTTP">HTTP.get Promise-style with error</button>
+  </div>
+  <textarea id="http-ok-result"></textarea>
+  <textarea id="http-err-result"></textarea>
+
+</template>
