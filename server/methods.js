@@ -18,7 +18,7 @@ Meteor.methods({
       setTimeout(()=>{
         console.log("done running")
         resolve("I'm baaaack....")}, 2500))
-    return Promise.await(promise);
+    return promise; //internally does Promise.await(promise);
   },
   futureTime() {
     let actions = new Promise((resolve) =>

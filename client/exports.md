@@ -1,7 +1,7 @@
 {{#template name="exports"}}
-# okgrow:promise API
+# deanius:promise API
 
-The *okgrow:promise* package gives you the following functionality:
+The *deanius:promise* package gives you the following functionality:
 
   - `Meteor.promise` - The same as `Meteor.call`, but you omit the callback parameter, and it returns a `Promise` for the result
   - `Meteor.wrapPromise` - Takes *any* callback-style function, and returns a Promise-returning function.
@@ -10,5 +10,5 @@ The *okgrow:promise* package gives you the following functionality:
   - `Meteor.subscribe` - The object returned by `Meteor.subscribe` will have a `readyPromise` property which resolves when `ready()` returns `true`.
   - `ReactivePromise` - A function to wrap Promise-returning functions with, to create reactive functions - such as helpers - which update when their promised value becomes available.
 
-The APIs fully specified in the [test suite](http://github.com/okgrow/meteor-promise/tree/master/tests/), and below are examples showing how to use the entire API exposed by this package.
+The APIs fully specified in the [test suite](http://github.com/deanius/meteor-promise/tree/master/tests/), and below are examples showing how to use the entire API exposed by this package.
 {{/template}}

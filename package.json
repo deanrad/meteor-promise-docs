@@ -1,10 +1,10 @@
 {
   "name": "meteor-promise-docs",
   "version": "0.1.0",
-  "description": "Demos the okgrow:promise package and ReactivePromise",
+  "description": "Demos the deanius:promise package and ReactivePromise",
   "scripts": {
-    "start": "meteor --port 4160",
-    "deploy": "meteor deploy okgrow-promise.meteor.com"
+    "start": "meteor --port 8470",
+    "deploy": "meteor deploy deanius-promise.meteor.com"
   },
   "author": "Dean Radcliffe",
   "license": "MIT"
