@@ -13,7 +13,7 @@ Template.example1Demo.helpers({
       value1 = template[field1].get(),
       value2 = template[field2].get();
 
-    return Meteor.promise("addSleep", value1, value2);
+    return Meteor.callPromise("addSleep", value1, value2);
   }, "loading...")
 });
 

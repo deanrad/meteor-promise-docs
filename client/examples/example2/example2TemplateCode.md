@@ -16,9 +16,9 @@ Template.example2Demo.helpers({
     var template = Template.instance();
     // Note: any reactive dependencies must be created in the initial call
     // of the function wrapped by ReactivePromise
-    return Meteor.promise("add", template.arg1.get(), template.arg2.get())
+    return Meteor.callPromise("add", template.arg1.get(), template.arg2.get())
       .then(function (result) {
-        return Meteor.promise("add", "Server says: ", result);
+        return Meteor.callPromise("add", "Server says: ", result);
       })
       .then(function (result) {
         return result + " :)";
