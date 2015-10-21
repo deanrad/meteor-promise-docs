@@ -1,5 +1,3 @@
-{{#template name="example3TemplateCode"}}
-```js
 aBitLater = (fn, delay) => new Promise(resolve => {
     setTimeout(()=>resolve(fn.call()), delay)
 })
@@ -16,6 +14,4 @@ Template.example3Demo.events({
     }).then(result => template.$("#promiseOutput").html(result))
     // ^ runAsync returns a Promise for the eventually returned value of the function
   }
-});
-```
-{{/template}}
+})

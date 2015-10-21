@@ -8,7 +8,7 @@ The demo enabled README is at http://deanius-promise.meteor.com/
 # How can using them enhance my Meteor development ?
 
 Well, not only can they enhance your Meteor development, they are now
-forever a part of JavaScript - in the standard called ES6 or ES 2015.
+forever a part of JavaScript - in the standard called ES2015 or ES 2015.
 
 Basically they allow you to pass around placholders for values
 which you may have to wait for due to:
@@ -96,7 +96,7 @@ promise
 Promises are better than callbacks for many reasons, not the least of
 which is that you can separate error-handling code from happy-path code.
 A full explanation of Promises is out of scope here, but since they are
-part of the new ES6 JavaScript standard, it would be great if you learn
+part of the new ES2015 JavaScript standard, it would be great if you learn
 how to use them.
 
 Now, the secret sauce. By wrapping our helper function in `ReactivePromise`, it allows us to return a Promise. When that Promise is *resolved*-in other words, when its result has come in- the helper will update.

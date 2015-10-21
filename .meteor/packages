@@ -19,7 +19,6 @@ spacebars
 check
 ecmascript
 
-grigio:babel
 reactive-var
 promise
 http
@@ -37,4 +36,4 @@ froatsnook:sleep
 deanius:promise
 manuel:viewmodel
 
-# deanius:debug-ddp
+deanius:debug-ddp

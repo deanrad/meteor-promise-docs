@@ -1,4 +1,7 @@
 template(name='header')
+ a(target='_blank', href='https://github.com/deanius/meteor-promise')
+  img(style='position: absolute; top: 0; right: 0; border: 0;', src='https://camo.githubusercontent.com/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67', alt='Fork me on GitHub', data-canonical-src='https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png')
+
   #top-header.navbar.navbar-fixed-top
     .navbar-inner
       .container(style='width: auto;')
@@ -19,24 +22,19 @@ template(name='header')
               b.caret
             ul.dropdown-menu(role='menu')
               li(role='presentation')
-                a(role='menuitem', tabindex='-1', href='#example-one') Meteor.callPromise - Method call (w/ latency)
+                a(role='menuitem', tabindex='-1', href='#call-promise') Meteor.callPromise - Method call (w/ latency)
               li(role='presentation')
                 a(role='menuitem', tabindex='-1', href='#example-two') Meteor.callPromise - Chained Method Calls
               li(role='presentation')
-                a(role='menuitem', tabindex='-1', href='#example-six') HTTP Promise-style
+                a(role='menuitem', tabindex='-1', href='#run-async') Meteor.runAsync
+              li(role='presentation')
+                a(role='menuitem', tabindex='-1', href='#http') HTTP Promise-style
           li.dropdown
             a#drop1.dropdown-toggle(href='#', role='button', data-toggle='dropdown')
-              | Real-World Examples
+              | Other Examples
               b.caret
             ul.dropdown-menu(role='menu')
               li(role='presentation')
-                a(role='menuitem', tabindex='-1', href='#example-five') Async Publishing Example
-          li.dropdown
-            a#drop1.dropdown-toggle(href='#', role='button', data-toggle='dropdown')
-              | ES6/ES7/MDG Examples
-              b.caret
-            ul.dropdown-menu(role='menu')
+                a(role='menuitem', tabindex='-1', href='#promise-await') Server-side Promise.await
               li(role='presentation')
-                a(role='menuitem', tabindex='-1', href='#example-three') Client-side ES6 async/await
-              li(role='presentation')
-                a(role='menuitem', tabindex='-1', href='#example-four') Server-side Promise.await
+                a(role='menuitem', tabindex='-1', href='#async-pub') Async Publishing Example

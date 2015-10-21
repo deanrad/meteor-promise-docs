@@ -1,11 +1,24 @@
 <template name="example3Demo">
 {{#markdown}}
-  We've shown using `ReactivePromise` to create a reactive helper function for a promise,
-  but other times we simply want to do something with the value of the promise. If we're using
-  `grigio:babel`, we can use experimental ES7 features called `async/await`, which let
-  us "pause" execution until the promise has resolved. This is comparable to using a Fiber,
-  however Fibers only run on the server, and once `async/await` is part of JavaScript,
-  Fibers will only be an implementation detail few people will need to know about.
+`Meteor.runAsync` allows us to run a special kind of function, a generator function,
+which uses the word `yield` any time it wants to await the result of a promise
+without blocking.
+
+The semantics of `Meteor.runAsync` are identical to that of the [`co` NPM Library](https://www.npmjs.com/package/co),
+and its return value is a promise for whatever the generator eventually `return`s with.
+
+```
+// Note: function* makes the function a generator
+Meteor.runAsync(function* () {
+   var out1 = yield Meteor.callPromise("add", "1", "2")
+   var out2 = yield aBitLater(() => 3, 500)
+   var result = yield Meteor.callPromise("add", out1, out2);
+   console.log("Async is done.", result);
+   return result;
+}).then(result => template.$("#promiseOutput").html(result))
+// ^ runAsync returns a Promise for the eventually returned value of the function
+```
+
 {{/markdown}}
   <div>
     <button id="triggerPromise">Put the result of a promise here-&gt;</button>

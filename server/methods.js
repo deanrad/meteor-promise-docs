@@ -5,6 +5,7 @@ Meteor.methods({
 
     //allow more than one method to run concurrently
     this.unblock();
+    console.log('in add')
     return `${x} + ${y}`
   },
   add(x, y){
@@ -18,7 +19,7 @@ Meteor.methods({
       setTimeout(()=>{
         console.log("done running")
         resolve("I'm baaaack....")}, 2500))
-    return promise; //internally does Promise.await(promise);
+    return Promise.await(promise);
   },
   futureTime() {
     let actions = new Promise((resolve) =>
